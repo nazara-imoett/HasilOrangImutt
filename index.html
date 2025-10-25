@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catatan Praktikum Dini</title>
+  <link href="style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">💖</div>
+      <div>
+        <h1>Catatan Praktikum — Dini</h1>
+        <p class="lead"> Hii Nurse Cantikkk😘</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <div>
+        <div class="card">
+          <h3>📝 Catat Hasil Praktikum</h3>
+          <p class="muted">Isi setiap kolom lalu tekan simpan. Data tersimpan di perangkat (Local Storage).</p>
+
+          <div class="form-grid">
+            <div>
+              <label>Nama Pasien / Simulasi</label>
+              <input id="nama" type="text" placeholder="contoh: Pasien A">
+            </div>
+            <div>
+              <label>Tanggal (otomatis)</label>
+              <input id="tanggal" type="text" disabled>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div>
+              <label>Tekanan Darah (sistolik/diastolik)</label>
+              <input id="tekanan" type="text" placeholder="contoh: 120/80">
+            </div>
+            <div>
+              <label>Denyut Nadi (bpm)</label>
+              <input id="nadi" type="number" min="0" placeholder="contoh: 78">
+            </div>
+          </div>
+
+          <div>
+            <label>Suhu Tubuh (°C)</label>
+            <input id="suhu" type="number" step="0.1" min="30" max="45" placeholder="contoh: 36.8">
+          </div>
+
+          <div class="controls">
+            <button id="simpanBtn" class="btn">💾 Simpan Catatan</button>
+            <button id="exportBtn" class="btn ghost">⬇️ Export CSV</button>
+            <button id="clearBtn" class="btn ghost">🧹 Hapus Semua</button>
+          </div>
+
+          <div id="feedback" class="msg" style="display:none"></div>
+          <p class="small-note">Kalkulator dosis ku sembunyiin dulu sampai datanya diverifikasi yawww beebb💙</p>
+        </div>
+
+        <div class="card">
+          <h3>📋 Data Terakhir</h3>
+          <div id="lastList" class="last-list"></div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3>📈 Grafik Tren</h3>
+          <p class="muted">Menampilkan tren Denyut Nadi dan Suhu dari data yang disimpan.</p>
+          <canvas id="chart" height="220"></canvas>
+        </div>
+
+        <div class="card">
+          <h3>⚙️ Pengaturan</h3>
+          <label>Jumlah entri pada grafik</label>
+          <input id="limit" type="number" value="20" min="5" max="200">
+          <div class="controls">
+            <button id="refreshBtn" class="btn ghost">🔁 Refresh</button>
+            <button id="undoBtn" class="btn ghost">↶ Undo Simpan Terakhir</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <small>Made with care by Rasya · Untuk: Dini ❤️</small>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
